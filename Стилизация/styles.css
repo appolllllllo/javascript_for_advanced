@@ -1,0 +1,44 @@
+/* #elem {
+	width: 200px;
+	height: 200px;
+} */
+
+/* #elem {
+	font-size: 2em;
+}  */
+
+/* .red {
+	color: red;
+}
+
+.green {
+	color: green;
+} */
+
+/* p.active {
+	color: red;
+}
+
+p:not(active) {
+	color: black;
+} */
+
+/* .success {
+	border: 1px solid green;
+}
+
+.error {
+	border: 1px solid red;
+} */
+
+[data-type='green'] {
+	color: green;
+}
+
+[data-type='yellow'] {
+	color: yellow;
+}
+
+[data-type='red'] {
+	color: red;
+}
