@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f0f0f0;
+  padding: 20px;
+}
+
+/* --- Панель ввода --- */
+.panel {
+  max-width: 500px;
+  margin: 0 auto 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.panel textarea {
+  resize: vertical;
+  min-height: 70px;
+  padding: 10px;
+  font-size: 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+.panel button {
+  padding: 10px;
+  font-size: 15px;
+  background: #4a90d9;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.panel button:hover {
+  background: #3570b0;
+}
+
+/* --- Доска со стикерами (плитка) --- */
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+/* --- Один стикер --- */
+.note {
+  width: 200px;
+  min-height: 160px;
+  background: #fff9c4; /* светло-жёлтый, как стикер */
+  border-radius: 6px;
+  box-shadow: 2px 3px 8px rgba(0,0,0,.15);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.note .text {
+  flex: 1; /* текст занимает всё свободное место */
+  font-size: 14px;
+  white-space: pre-wrap; /* сохраняем переносы строк из textarea */
+  word-break: break-word;
+}
+
+.note .actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.note .actions button {
+  flex: 1;
+  padding: 5px 0;
+  font-size: 13px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.note .actions .edit-btn { background: #a5d6a7; }
+.note .actions .del-btn  { background: #ef9a9a; }
+
