@@ -1,0 +1,185 @@
+/* Общие стили */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #f5f5f5;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+/* Контейнер */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовок */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+/* Форма добавления задачи */
+.form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+/* Поле ввода */
+#task-input {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#task-input:focus {
+    border-color: #007bff;
+}
+
+/* Кнопка "Добавить" */
+#add-btn {
+    padding: 12px 24px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+#add-btn:hover {
+    background: #0056b3;
+}
+
+#add-btn:active {
+    transform: scale(0.98);
+}
+
+/* Список задач */
+#tasks {
+    list-style: none;
+}
+
+/* Элемент задачи */
+#tasks li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+#tasks li:hover {
+    background: #e9ecef;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Кастомный чекбокс */
+#tasks li input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #28a745;
+    flex-shrink: 0;
+}
+
+/* Текст задачи */
+#tasks li span {
+    flex: 1;
+    font-size: 15px;
+    color: #333;
+    word-break: break-word;
+}
+
+/* Зачёркнутый текст для выполненных задач */
+#tasks li span.done {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* Кнопки "Изменить" и "Удалить" */
+#tasks li button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.2s, transform 0.1s;
+    flex-shrink: 0;
+}
+
+#tasks li button:active {
+    transform: scale(0.95);
+}
+
+/* Кнопка "Изменить" */
+#tasks li button:nth-child(3) {
+    background: #ffc107;
+    color: #333;
+}
+
+#tasks li button:nth-child(3):hover {
+    background: #e0a800;
+}
+
+/* Кнопка "Удалить" */
+#tasks li button:nth-child(4) {
+    background: #dc3545;
+    color: white;
+}
+
+#tasks li button:nth-child(4):hover {
+    background: #c82333;
+}
+
+/* Пустой список */
+#tasks:empty::before {
+    content: 'Нет задач. Добавьте первую!';
+    display: block;
+    text-align: center;
+    color: #999;
+    padding: 30px;
+    font-size: 15px;
+    font-style: italic;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 500px) {
+    .form {
+        flex-direction: column;
+    }
+    
+    #tasks li {
+        flex-wrap: wrap;
+    }
+    
+    #tasks li span {
+        width: 100%;
+        margin-left: 32px;
+    }
+    
+    #tasks li button {
+        margin-left: 32px;
+    }
+}
